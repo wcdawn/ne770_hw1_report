@@ -149,15 +149,15 @@
         to maximize the efficiency of the scheme. The following are quantities
         necessary for the optimization of this efficiency. For this
         implementation, $E_{max} = 20 \text{MeV}$. 
-        \begin{align}
-          h_{max1} &= \max_{E \in [0,x_1]} \chi(E) \\
-          h_{max2} &= \max_{E \in [x_1,E_{max}]} \chi(E) \\
-          H_1 &= \int_0^{x_1} \chi(E) \; dE \\
-          H_2 &= \int_{x_1}^{E_{max}} \chi(E) \; dE \\
-          \epsilon_1 &= \frac{H_1}{h_{max1} x_1} \\
-          \epsilon_2 &= \frac{H_2}{h_{max2} (E_{max} - x_1) \\
-          \epsilon &= \frac{1}{\frac{H_1}{\epsilon_1} + \frac{H_2}{\epsilon_2}}
-        \end{align}
+        %\begin{align}
+        %  h_{max1} &= \max_{E \in [0,x_1]} \chi(E) \\
+        %  h_{max2} &= \max_{E \in [x_1,E_{max}]} \chi(E) \\
+        %  H_1 &= \int_0^{x_1} \chi(E) \; dE \\
+        %  H_2 &= \int_{x_1}^{E_{max}} \chi(E) \; dE \\
+        %  \epsilon_1 &= \frac{H_1}{h_{max1} x_1} \\
+        %  \epsilon_2 &= \frac{H_2}{h_{max2} (E_{max} - x_1) \\
+        %  \epsilon &= \frac{1}{\frac{H_1}{\epsilon_1} + \frac{H_2}{\epsilon_2}}
+        %\end{align}
         The above equations can be solved for a given $x_1$ and be optimized for
         maximum efficiency. For this method, a binary search was used resulting
         in $x_1 = 5.25$ and $\epsilon = 0.426577$. Other quantities can then be
