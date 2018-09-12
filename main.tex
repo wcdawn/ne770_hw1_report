@@ -10,27 +10,47 @@
 \maketitle
 
 \begin{enumerate}
-    \item Evaluate the integral
-      \begin{equation}
-          \int_0^{\pi} \theta \sin(\theta) \; d\theta
-      \end{equation}
-      by Monte Carlo. Report and plot the mean, the variance, and uncertainty in
-      the mean as a function of number of samples. Compare to the analytic 
-      solution.
-    \item A common expression for the fission neutron spectrum is 
-      \begin{equation}
-          \chi(E) = 0.453 \exp(-E/0.965) \sinh\left(\sqrt{2.29E}\right)
-      \end{equation}
-      where $E \in [0,\infty)$ is in MeV. Note $\chi(E)$ is a PDF on the
-      interval. The average number of neutrons emitted in fussion from 
-      \isotope[235]{U} as a function of energy can be taken to be
-      \begin{equation}
-        \nu(E) = 
-        \begin{cases}
-          2.42 + 0.066 E & E \le 1 \\
-          2.349 + 0.15 E & E >   1
-        \end{cases}
-      \end{equation}
+  \item Evaluate the integral
+    \begin{equation}
+        \int_0^{\pi} \theta \sin(\theta) \; d\theta
+    \end{equation}
+    by Monte Carlo. Report and plot the mean, the variance, and uncertainty in
+    the mean as a function of number of samples. Compare to the analytic 
+    solution.
+  \item A common expression for the fission neutron spectrum is 
+    \begin{equation}
+      \chi(E) = 0.453 \exp(-E/0.965) \sinh\left(\sqrt{2.29E}\right)
+    \end{equation}
+    where $E \in [0,\infty)$ is in MeV. Note $\chi(E)$ is a PDF on the
+    interval. The average number of neutrons emitted in fussion from 
+    \isotope[235]{U} as a function of energy can be taken to be
+    \begin{equation}
+      \nu(E) = 
+      \begin{cases}
+        2.42 + 0.066 E & E \le 1 \\
+        2.349 + 0.15 E & E >   1
+      \end{cases}
+    \end{equation}
+    \begin{enumerate}
+      \item Show numerically that the standard rejection scheme generates
+        energies distributed according to the fission neutron spectrum. Verify
+        numerically the efficency of the rejection scheme.
+      \item Verigy numerically that increasing the $h_{max}$ value for the
+        rejection scheme still generates energies distributed according to the
+        fission neutron spectrum while only affecting the efficiency of the
+        scheme.
+      \item Develop a two region partioned rejection scheme for sampling the
+        fisiosn neutron spectrum. Determine the maximum efficiency that can be
+        obtained with the two region scheme. Show that the partitioned scheme
+        generates energies according to the fission neutron spectrum. Verify
+        numerically the efficiency of the partitioned scheme.
+      \item 
+        \label{part:standard}
+        Use the standard rejection scheme to determine both the average
+        number of neutrons per fision and the average fissions per neutron
+        energy. Compare to the ``analytic'' result.
+      \item Repeat part \ref{part:standard} using hte maximum efficiency scheme.
+    \end{enumerate}
 \end{enumerate}
 
 \end{document}
